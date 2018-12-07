@@ -43,7 +43,6 @@ void generateToken(int quantity){
 
 int main()
 {
-    generateToken(1);
+    generateToken(120);
     return 0;
-
 }
