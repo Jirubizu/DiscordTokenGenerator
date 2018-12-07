@@ -19,9 +19,6 @@ struct Response {
     std::map<std::string, std::string> header;
 };
 
-struct StandardResponse : Response {
-
-};
 
 class Bot : public SleepyDiscord::DiscordClient{
 public:
