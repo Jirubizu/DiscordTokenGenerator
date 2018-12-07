@@ -3,7 +3,6 @@
 #include <cstdlib>
 #include <ctime>
 #include <fstream>
-#include "sleepy_discord/websocketpp_websocket.h";
 
 static const char alphanum[] =
 "0123456789"
@@ -11,24 +10,11 @@ static const char alphanum[] =
 "abcdefghijklmnopqrstuvwxyz"
 "_";
 
-static int stringLength = sizeof(alphanum) - 1;
-
-struct Response {
-    int32_t statusCode;
-    std::string text;
-    std::map<std::string, std::string> header;
-};
-
-
-class Bot : public SleepyDiscord::DiscordClient{
-public:
-    using SleepyDiscord::DiscordClient::DiscordClient;
-};
-
 char generateRandomString(int stringLen)  // Random string generator function.
 {
     return alphanum[rand() % stringLen];
 }
+
 void generateToken(int quantity){
     std::ofstream tokensfile ("tokens.txt");
     if (tokensfile.is_open()){
@@ -39,14 +25,13 @@ void generateToken(int quantity){
                 if (z == 24 || z == 31){
                     token.append(".");
                 }else if(z > 31){
-                    randomChar = generateRandomString(stringLength);
+                    randomChar = generateRandomString(sizeof(alphanum) - 1);
                     token.append(randomChar);
                 }else{
-                    randomChar = generateRandomString(stringLength-1);
+                    randomChar = generateRandomString(sizeof(alphanum) - 2);
                     token.append(randomChar);
                 }
             }
-            Bot(token,2);
             tokensfile << token << "\n";
             token.clear();
         }
@@ -54,8 +39,6 @@ void generateToken(int quantity){
     }else{
         std::cout << "Unable to open file";
     }
-
-
 }
 
 int main()
