@@ -38,7 +38,7 @@ void generateToken(int quantity){
         tokensfile.close();
     }else{
         std::cout << "Unable to open file";
-    }
+    }//
 }
 
 int main()
