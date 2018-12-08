@@ -42,7 +42,7 @@ void generateToken(int quantity){
 }
 
 int main()
-{
+{ //
     int amount;
     std::cout << "How many tokens would you like to generate?\n>> ";std::cin >> amount;
     generateToken(amount);
