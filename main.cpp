@@ -47,4 +47,4 @@ int main()
     std::cout << "How many tokens would you like to generate?\n>> ";std::cin >> amount;
     generateToken(amount);
     return 0;
-}
+} //
