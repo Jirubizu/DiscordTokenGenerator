@@ -17,7 +17,7 @@ char generateRandomString(int stringLen)  // Random string generator function.
 
 void generateToken(int quantity){
     std::ofstream tokensfile ("tokens.txt");
-    if (tokensfile.is_open()){
+    if (tokensfile.is_open()){ //while the txt is open
         std::string token, randomChar;
         for (int i=0; i<quantity;i++){
             for(int z=0; z < 59; z++)
@@ -36,7 +36,7 @@ void generateToken(int quantity){
             token.clear();
         }
         tokensfile.close();
-    }else{
+    }else{ //err
         std::cout << "Unable to open file";
     }//
 }
