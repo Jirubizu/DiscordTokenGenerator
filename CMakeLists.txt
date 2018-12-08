@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 2.8)
 
 project(DiscordTokenGenerator)
-file (GLOB_RECURSE HEADERS *.h)
-file (GLOB_RECURSE SOURCES *.cpp)
+file (GLOB_RECURSE HEADERS src/*.h src/*.hpp)
+file (GLOB_RECURSE SOURCES src/*.cpp)
 
 add_executable(DiscordTokenGenerator ${HEADERS} ${SOURCES})
 
