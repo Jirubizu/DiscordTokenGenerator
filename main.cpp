@@ -43,6 +43,8 @@ void generateToken(int quantity){
 
 int main()
 {
-    generateToken(120);
+    int amount;
+    std::cout << "How many token combos would you like to generate?\n>> ";std::cin >> amount;
+    generateToken(amount);
     return 0;
 }
